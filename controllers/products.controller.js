@@ -22,13 +22,11 @@ exports.getProducts = async (req, res) => {
       ...query,
     })
     
-    if(!products.count) {
-      res
-        .status(404)
-        .send({
-          body: 'products not found'
-        })
-    }
+    if(!products.count) return res
+      .status(404)
+      .send({
+        body: 'products not found'
+      })
 
     res
       .status(200)
@@ -40,7 +38,40 @@ exports.getProducts = async (req, res) => {
     res
       .status(500)
       .send({
-        body: 'internal error'
+        body: error
+      })
+  }
+}
+
+exports.getProductById = async (req, res) => {
+  const { productId } = req.params
+
+  try {
+    const product = await Product.findByPk(
+      productId,
+      {
+        include: [Category],
+        attributes: { exclude: 'category' },
+      }
+    )
+
+    if(!product) return res
+      .status(404)
+      .send({
+        body: 'product not found'
+      })
+
+    res
+      .status(200)
+      .send({
+        body: product
+      })
+
+  } catch (error) {
+    res
+      .status(500)
+      .send({
+        body: error
       })
   }
   
