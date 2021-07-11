@@ -14,8 +14,8 @@ const Category = sequelize.define('Category', {
     type: DataTypes.TEXT
   },
 }, {
+  //name in the database
   tableName: 'category',
-  // freezeTableName: true,
   timestamps: false,
 })
 

@@ -27,11 +27,12 @@ const Product = sequelize.define('Product', {
     type: DataTypes.INTEGER
   },
 }, {
+  //name in the database
   tableName: 'product',
-  // freezeTableName: true,
   timestamps: false,
 })
 
+//association 
 Product.hasOne(Category, { foreignKey: 'id', sourceKey: 'category' })
 
 module.exports = Product

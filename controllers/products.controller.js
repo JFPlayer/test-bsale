@@ -4,7 +4,7 @@ const { Op } = require('sequelize')
 
 exports.getProducts = async (req, res) => {
   const query = {}
-console.log(req.query)
+
   if(req.query) {
     const { search, limit, page, categoryId } = req.query
     
@@ -16,7 +16,7 @@ console.log(req.query)
 
     if(page) query.offset = parseInt(page) > 0 ? (parseInt(page) - 1) * parseInt(limit) : 0
   }
-  console.log(query)
+
   try {
     const products = await Product.findAndCountAll({
       include: [Category],
