@@ -1,14 +1,14 @@
 #Test Bsale Backend
 _Aplicacion web ecommerce desarrollado como prueba tecnica para Bsale_
 
-##Vista previa 
+## Vista previa 
 [![](/preview-bsale.jpg)](https://test-bsale-joel-flores.herokuapp.com/)
 Demo: [E-commerce Bsale](https://test-bsale-joel-flores.herokuapp.com/)
 
-##Comenzando 🚀
+## Comenzando 🚀
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-###Instalación 🔧
+### Instalación 🔧
 
 Clonar el proyecto
 ```bash
@@ -27,14 +27,14 @@ Iniciar el servidor de desarrollo
   npm run dev
 ```
 
-##Referencias de la API :information_source:
+## Referencias de la API :information_source:
 
-####Obtener todos los productos
+#### Obtener todos los productos
 ```http
   GET /api/products
 ```
 
-####Obtener los productos filtrados
+#### Obtener los productos filtrados
 ```http
   GET /api/products?search=${keyword}&categoryId=${categoryId}&limit=${limit}&page=${page}
 ```
@@ -46,19 +46,19 @@ Iniciar el servidor de desarrollo
 | `limit` | `number` |  Cantidad de productos por paginas |
 | `page` | `number` |  Numero de pagina |
 
-####Obtener un producto
+#### Obtener un producto
 ```http
   GET /api/products/${productId}
 ```
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `productId` | `number` |  ID del producto |
-####Obtener las categorias
+#### Obtener las categorias
 ```http
   GET /api/categories/
 ```
 
-##Variables de entorno :lock:
+## Variables de entorno :lock:
 Para iniciar este proyecto necesitas crear un archivo .env en la raiz del proyecto y añadir estas variables de entorno
 
 `PORT`
@@ -67,14 +67,14 @@ Para iniciar este proyecto necesitas crear un archivo .env en la raiz del proyec
 `DB_PASSWORD`
 `DB_NAME`
 
-##Caracteristicas 📋
+## Caracteristicas 📋
 - Busqueda de productos por "palabras clave", categoria
 - Carrito de compras
 - Paginación
 
 
-##Construido con 🛠️
+## Construido con 🛠️
 **Server:** Node, Express, Sequelize
 
-##Autor ✒️
+## Autor ✒️
 **[Joel Flores](https://www.linkedin.com/in/joel-flores-7801/)**
