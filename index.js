@@ -2,8 +2,11 @@ const { config } = require('./config')
 const app = require('./app')
 const { sequelize } = require('./database')
 
-app.listen(config.port, () => {
-  console.log(`listening on port ${config.port}`)
+app.set('port', config.port || 3000)
+const PORT = app.get('port')
+
+app.listen(PORT, () => {
+  console.log(`listening on port ${PORT}`)
   
   sequelize.authenticate()
     .then(() => console.log('Connection has been established successfully.'))
